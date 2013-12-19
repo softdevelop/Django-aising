@@ -1,0 +1,13 @@
+[Credentials]
+MySQLUsername = root
+MySQLPassword = pea5nut
+AWSAccessID = AKIAJLUEFXUKI4XLWKIQ
+AWSSecretKey = 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
+
+[Defaults]
+S3Bucket = storage20121210
+MTurkLayoutID = 2T1W40SPW1INNSUKPUA3QAB6BGDE1N
+HITTitle = amusic
+HITDescription = amusicdescription
+HITKeywords = music
+

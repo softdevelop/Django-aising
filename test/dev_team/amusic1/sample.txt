@@ -1,0 +1,24 @@
+import amusic
+db = amusic.amusic('password') #DB connect. username='username' optionally
+db.initialize() #initialize default tables
+pop1 = db.newPopulation('pop1')
+song = pop1.Song('song1')
+
+#song.addNote(trackID, pitch, startTime, duration, velocity)
+# OR
+#song.random() #Clears song and fills it with random entries
+# OR
+#song.fromFile(fileName) #imports a MIDI
+# OR
+#song.fromDB() #fills song events from the matching title in the DB
+
+
+#song.toDB() #commits song into DB
+# OR
+#song.toFile(fileName) #exports a MIDI
+
+
+#NOTE: in the sample, the return value from newPopulation is used to add a new song 
+#      without actually setting a population like you requested. This is just to ease
+#      up the API. Functions setPopulation('title') and getCurrentPopulation() are
+#      available too for your UI preference

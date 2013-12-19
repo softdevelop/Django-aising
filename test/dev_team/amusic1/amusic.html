@@ -1,0 +1,104 @@
+<html lang="en">
+<head>
+<script src="https://storage20121210.s3.amazonaws.com/johndyer-mediaelement-98263df/build/jquery.js"></script>	
+<script src="https://storage20121210.s3.amazonaws.com/johndyer-mediaelement-98263df/build/mediaelement-and-player.min.js"></script>
+<script type="text/javascript" src="https://s3.amazonaws.com/mturk-public/externalHIT_v1.js"></script>
+
+<link rel="stylesheet" href="https://storage20121210.s3.amazonaws.com/johndyer-mediaelement-98263df/build/mediaelementplayer.min.css" />
+<style type="text/css">
+body {
+    margin:8px;
+    background-color:#FFF;
+    font-family:calibri,sans-serif;
+    color:#fff;
+}
+#left {
+    float:left;
+    width:50%;   
+    height:100%;
+    background-color:#999;
+}
+#right {
+    float:right;
+    width:50%;
+    height:100%;
+    background-color:#999;
+}
+#submitButton{
+    position:absolute;
+    top: 360px;
+    left:46%;
+    width:8%;
+    padding: 10px 10px 10px 10px;
+}
+#main{
+    height:500px;
+    width: 930px;
+    margin-left:auto;
+    margin-right:auto;
+}
+#box1,#box2{
+    height:40%;
+    background-color:#888;
+    width:307px;
+    padding: 2% 2% 2% 2%;
+}
+#box1:hover,#box2:hover{
+    background-color:#777 !important;
+}
+#title{
+    position:relative;
+    float:left;
+    top: 100px;
+    text-align: center;
+    width:930px;
+    font-family:"Arial", sans-serif;
+    font-size:1.5em;
+}
+</style>
+<script type="text/javascript">
+    //var selected="";
+    function boxClicked(var1,var2){
+        document.getElementById(var1).style.background="#666";
+        document.getElementById(var1).style.background=":hover{color:#666}";
+        document.getElementById(var1+"radio").checked = true;
+        document.getElementById(var2).style.background="#888";
+        document.getElementById(var2).style.background=":hover{color:#666}";
+        document.getElementById(var2+"radio").checked = false;
+        selected=var1;
+    }
+</script>
+</head>
+<div id="main">
+    <a id="title">Which track do you like better?</a>
+    <div id="left">
+        <div id="box1" onclick="boxClicked('box1','box2');"style="padding-right:2%;margin-top:175px;margin-left:30%;margin-right:auto;display:block;" >
+            <audio style="float:right;"src="${file1}" type="audio/mp3" controls="controls"/>
+        </div>
+    </div>
+    <div id="right">
+        <div id="box2" onclick="boxClicked('box2','box1')"style="padding-left:2%;margin-top:175px;margin-left:auto;margin-right:30%;display:block;;" >
+            <audio style="float:left;"src="${file2}" type="audio/mp3" controls="controls"/>
+        </div>
+    </div>
+    <form name="mturk_form" method="post" id="mturk_form" action="https://workersandbox.mturk.com/mturk/externalSubmit" onsubmit="return fun();">
+        <input id="box1radio" style="display:none;" name="boxradio" value="box1" type="radio"/>
+        <input id="box2radio" style="display:none;" name="boxradio" value="box2" type="radio"/>
+        <input type="hidden" value="" name="assignmentId" id="assignmentId"/>
+        <input type="hidden" value="${file1}" name="song1"/>
+        <input type="hidden" value="${file2}" name="song2"/>
+        <input type="submit" id="submitButton" value="Submit" name="commit"/>
+    </form>
+    <script type="text/javascript">
+        function fun(){
+            if (!document.getElementById("box1radio").checked && !document.getElementById("box2radio").checked){
+                alert("You must have a choice.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+    <script type="text/javascript">turkSetAssignmentID();</script>
+</div>
+<script>$('audio').mediaelementplayer({mode:'shim',audioWidth:305});</script>
+</html>

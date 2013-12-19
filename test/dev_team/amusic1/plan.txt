@@ -1,0 +1,23 @@
+4:12 PM 5/18/2013
+scoring: need to rewrite this part so it compares everyone to a randomly selected set of N songs. 1 if you win. 0 if you don't win. 0.5 if you are the same song.
+
+    def prepareBatch(self):
+        for d,i in enumerate(l):
+            for j in l[d+1:]:
+                f1 = i+'.mp3' if i.find('.')==-1 else i[:i.find('.')]+'.mp3'
+                f2 = j+'.mp3' if j.find('.')==-1 else j[:j.find('.')]+'.mp3'
+                print "\tHIT %d/%d (%s,%s)" % (n,len(l)*(len(l)-1)/2,f1,f2)
+                params = LayoutParameters()
+                params.add(LayoutParameter('file1',s+f1))
+                params.add(LayoutParameter('file2',s+f2))
+                self.amusic.mtc.create_hit(hit_layout=self.amusic.conf          
+
+
+7:54 PM 5/18/2013
+rank and normalize it to 0 to 1
+so 1, 2, 3 will be
+0, 0.5, 1
+visit each and make it reproduce with probability equal to normalized rank
+so worst will not reproduce, best will, and others are in between
+then adjust the size of the population by culling away those with lowest scores in the old generation population
+

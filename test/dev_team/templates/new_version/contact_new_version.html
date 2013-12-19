@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-language" content="cs" />
+    <meta name="author" lang="cs" content="David Kohout; http://www.davidkohout.cz" />
+    <meta name="copyright" lang="cs" content="David Kohout; http://www.davidkohout.cz" />
+    <meta name="description" content="..." />
+    <meta name="keywords" content="..." />
+    <meta name="robots" content="all,follow" />
+    <link href="css/screen.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+    <title>aisings.com &ndash; automatic melody generation</title>
+  </head>
+  <body>
+
+    <div id="layout">
+      
+      <div id="header">
+        
+        <h1 id="logo"><a href="#" title="#">aisings<span>.com</span></a></h1>
+        <hr class="noscreen" />   
+          
+              
+        <div id="navigation">
+        <ul>
+          <li><a href="#" title="#">HOME</a></li>
+          <li><a href="#" title="#">ABOUT US</a></li>
+        </ul>
+        </div>
+        <hr class="noscreen" />  
+    
+      </div>
+      
+        <div class="rbroundbox">
+	         <div class="rbtop"><div></div></div>
+		          <div class="rbcontent">
+          			
+          		<div class="content">
+              <h2>aisings.com</h2>
+              <p> Free automatic melody generation. </p>
+              <a href="about" class="light">More about us</a>
+              </div>
+              <div id="panel-right"><div id="panel-right-inside">
+              <p></p>
+              <p></p>
+              </div></div>	
+          			
+        		  </div>
+	         <div class="rbbot"><div></div></div>
+        </div>
+
+        <div id="main">
+
+<form action="/polls/" method="post">{% csrf_token %}
+<input type="submit" value="Generate Melody" />
+
+
+{{ form.as_p }}
+
+
+</form>
+
+<br>
+<br>
+<br>
+
+<hr>
+<big><b>How to use the site:</b> After selecting influences, click Generate Melody, and the robot will generate a unique melody that will arrive as a downloadable mp3. Every melody is different, and the robot will never generate the same one twice. It may take several seconds to a minute to generate. (Picking more influences makes the robot require more time.)</big>
+<hr>
+<br>
+<br>
+<br>
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'aisings'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+<hr>
+        
+        
+        </div>
+        </div>
+        <div id="footer">
+        <div id="footer-inside">
+        <p id="copyright">&copy; 2013 - Richard Giuly</p>
+
+	<small>
+        <!-- Please don't delete this. You can use this template for free and this is the only way that you can say thanks to me -->
+          <p id="dont-delete-this">Design by <a href="http://www.davidkohout.cz">David Kohout</a> | Our tip: <a href="http://www.goodmood.cz" title="Absinthe, Becherovka, Slivovitz store">Absinthe Store</a></p>
+        <!-- Thank you :) -->
+	</small>
+
+        </div><div style="clear: both;"></div></div>
+  </body>
+</html>

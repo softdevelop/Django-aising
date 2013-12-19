@@ -1,0 +1,82 @@
+[]
+<?xml version="1.0"?>
+<HTMLQuestion xmlns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2011-11-11/HTMLQuestion.xsd">
+  <HTMLContent><![CDATA[<!DOCTYPE html><html><head><title>HIT</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><script type='text/javascript' src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js'></script></head><body><script src="https://storage20121210.s3.amazonaws.com/johndyer-mediaelement-98263df/build/jquery.js"></script>	 <script src="https://storage20121210.s3.amazonaws.com/johndyer-mediaelement-98263df/build/mediaelement-and-player.min.js"></script> <script type="text/javascript" src="https://s3.amazonaws.com/mturk-public/externalHIT_v1.js"></script>
+<p>
+<link rel="stylesheet" href="https://storage20121210.s3.amazonaws.com/johndyer-mediaelement-98263df/build/mediaelementplayer.min.css" /> <style type="text/css">
+body {
+    margin:8px;
+    background-color:#FFF;
+    font-family:calibri,sans-serif;
+    color:#fff;
+}
+#left {
+    float:left;
+    width:50%;   
+    height:100%;
+    background-color:#999;
+}
+#right {
+    float:right;
+    width:50%;
+    height:100%;
+    background-color:#999;
+}
+#submitButton{
+    position:absolute;
+    top: 360px;
+    left:46%;
+    width:8%;
+    padding: 10px 10px 10px 10px;
+}
+#main{
+    height:500px;
+    width: 930px;
+    margin-left:auto;
+    margin-right:auto;
+}
+#box1,#box2{
+    height:40%;
+    background-color:#888;
+    width:307px;
+    padding: 2% 2% 2% 2%;
+}
+#box1:hover,#box2:hover{
+    background-color:#777 !important;
+}
+#title{
+    position:relative;
+    float:left;
+    top: 100px;
+    text-align: center;
+    width:930px;
+    font-family:"Arial", sans-serif;
+    font-size:1.5em;
+}
+</style></p>
+<script type="text/javascript">
+    //var selected="";
+    function boxClicked(var1,var2){
+        document.getElementById(var1).style.background="#666";
+        document.getElementById(var1).style.background=":hover{color:#666}";
+        document.getElementById(var1+"radio").checked = true;
+        document.getElementById(var2).style.background="#888";
+        document.getElementById(var2).style.background=":hover{color:#666}";
+        document.getElementById(var2+"radio").checked = false;
+        selected=var1;
+    }
+</script>
+<div id="main"><a id="title">Which track do you like better?</a>
+<div id="left">
+<div id="box1" onclick="boxClicked('box1','box2');" style="padding-right:2%;margin-top:175px;margin-left:30%;margin-right:auto;display:block;"><audio tabindex="0" style="float:right;" src="http://storage20121210.s3.amazonaws.com/tracks/s1.mp3" type="audio/mp3" controls="controls"></audio></div>
+</div>
+<div id="right">
+<div id="box2" onclick="boxClicked('box2','box1')" style="padding-left:2%;margin-top:175px;margin-left:auto;margin-right:30%;display:block;;"><audio tabindex="0" style="float:left;" src="http://storage20121210.s3.amazonaws.com/tracks/s2.mp3" type="audio/mp3" controls="controls"></audio></div>
+</div>
+<form name="mturk_form" method="post" id="mturk_form" action="https://workersandbox.mturk.com/mturk/externalSubmit">
+    <input type="radio" id="box1radio" style="display:none;" name="boxradio" value="box1" />         <input type="radio" id="box2radio" style="display:none;" name="boxradio" value="box2" />         <input type="hidden" value="" name="assignmentId" id="assignmentId" />         <input type="submit" id="submitButton" value="Submit" name="commit" />
+</form>
+<script language="Javascript">turkSetAssignmentID();</script></div>
+<script>$('audio').mediaelementplayer({mode:'shim',audioWidth:305});</script></body></html>]]></HTMLContent>
+  <FrameHeight>400</FrameHeight>
+</HTMLQuestion>
